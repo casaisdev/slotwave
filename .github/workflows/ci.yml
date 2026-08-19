@@ -10,9 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Node 24: the version the project is developed on; its npm writes the
+      # lockfile, so CI must resolve it with the same npm generation.
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - run: npm ci

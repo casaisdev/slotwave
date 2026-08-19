@@ -32,10 +32,11 @@ live mode the buffer keeps recording while you listen to the past.
 ## Live mode
 
 Copy `.env.example` to `.env.local` (or `.env`) and set a Solana RPC URL that
-includes your provider key (e.g. Helius):
+includes your provider key. Any JSON-RPC provider works — the app speaks raw
+JSON-RPC with no provider SDK — e.g. Alchemy:
 
 ```
-SOLANA_RPC_URL=https://mainnet.helius-rpc.com/?api-key=YOUR_KEY
+SOLANA_RPC_URL=https://solana-mainnet.g.alchemy.com/v2/YOUR_KEY
 ```
 
 The key never reaches the client. Route handlers proxy the RPC with closed,
