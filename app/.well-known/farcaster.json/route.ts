@@ -12,9 +12,18 @@ export async function GET() {
     iconUrl: `${base}/brand/icon-1024.png`,
     splashImageUrl: `${base}/brand/splash-200.png`,
     splashBackgroundColor: "#0a0e1a",
+    subtitle: "listen to solana live",
     description: "Listen to Solana in real time. Every slot makes a sound.",
+    tagline: "the sound of solana",
     primaryCategory: "music",
     tags: ["solana", "music", "sonification", "blockchain", "live"],
+    heroImageUrl: `${base}/opengraph-image`,
+    ogTitle: "Slotwave",
+    ogDescription: "Listen to Solana in real time. Every slot makes a sound.",
+    ogImageUrl: `${base}/opengraph-image`,
+    // manifest-level default embed, for surfaces that don't read page meta
+    imageUrl: `${base}/embed-image`,
+    buttonTitle: "listen",
   };
   return Response.json(
     // `miniapp` is the current key; `frame` keeps older validators happy.
