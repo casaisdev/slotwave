@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 144" fill="none">
+  <rect width="560" height="144" fill="#0A0E1A"/>
+  <text x="280" y="98" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace" font-size="96" fill="#E2E8F0">slot</text>
+  <polyline points="284.8,96 290.8,47 296.8,96 302.8,47 308.8,96 314.8,47 320.8,96 326.8,47 332.8,96" stroke="#22E584" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="337.6" y="98" font-family="'JetBrains Mono', ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace" font-size="96" fill="#E2E8F0">ave</text>
+</svg>

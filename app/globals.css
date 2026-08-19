@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0e1a;
+  --color-signal: #22e584;
+  --color-event: #8b5cf6;
+  --color-muted: #94a3b8;
+  --color-ink: #e2e8f0;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  /* native scrollbars, form controls and highlights follow the dark ground */
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-signal) 28%, transparent);
+  color: var(--color-ink);
+}
+
+/* volume slider: hairline track, small round thumb, flat */
+input[type="range"] {
+  appearance: none;
+  height: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: color-mix(in srgb, var(--color-muted) 40%, transparent);
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  margin-top: -4px;
+  border-radius: 9999px;
+  background: var(--color-signal);
+}
+input[type="range"]::-moz-range-track {
+  height: 2px;
+  background: color-mix(in srgb, var(--color-muted) 40%, transparent);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 9999px;
+  background: var(--color-signal);
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+/* the wordmark's wave draws itself once when the page arrives */
+@keyframes wave-in {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-wave-in {
+  stroke-dasharray: 100;
+  animation: wave-in 0.9s ease-out 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-in {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+/* the w-wave draws itself while live tunes in */
+@keyframes wave-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-wave-draw {
+  animation: wave-draw 1.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-draw {
+    animation: none;
+  }
+}
