@@ -68,9 +68,12 @@ export default function Stage({
   const [hoverSlot, setHoverSlot] = useState<PlayedSlot | null>(null);
   const [hoverLeft, setHoverLeft] = useState(0);
   const [dragging, setDragging] = useState(false);
-  // the draw loop lives in a []-effect; it reads status through this ref
+  // the draw loop lives in a []-effect; it reads status through this ref,
+  // synced after commit (writing refs during render breaks React's rules)
   const statusRef = useRef(status);
-  statusRef.current = status;
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
 
   const playheadFloat = (): number => {
     const f = frame.current;

@@ -865,7 +865,7 @@ export default function Instrument() {
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- one-time preview
+     
   }, []);
 
   // Any pointer or key counts as someone being at the controls.
