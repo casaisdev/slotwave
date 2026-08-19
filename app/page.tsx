@@ -24,7 +24,10 @@ export async function generateMetadata({
           title: "listen",
           action: {
             type: "launch_frame",
+            name: "Slotwave",
             url: slot ? `${base}/?slot=${slot}` : base,
+            splashImageUrl: `${base}/brand/splash-200.png`,
+            splashBackgroundColor: "#0a0e1a",
           },
         },
       }),
