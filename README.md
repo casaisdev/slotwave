@@ -85,8 +85,13 @@ npx tsx scripts/capture.ts --slots 1000   # record a real mainnet fixture
 
 Import the repo, set `SOLANA_RPC_URL` in the project's environment variables,
 deploy. No `vercel.json` needed, the CDN honors the routes' `s-maxage`
-headers (check `x-vercel-cache: HIT` on repeated `/api/slot/[n]` requests).
-Production defaults to live mode with automatic replay fallback.
+headers (check `x-vercel-cache: HIT` on repeated `/api/window/[start]`
+requests). Production defaults to live mode with automatic replay fallback.
+
+When serving a custom domain, also set `NEXT_PUBLIC_SITE_URL` to it (e.g.
+`https://slotwave.example.com`) and redeploy: the domain Vercel auto-detects
+is baked at build time, and the Farcaster manifest signature must match the
+final domain exactly.
 
 ## Tuning the mix
 
