@@ -1,10 +1,19 @@
 # Slotwave
 
+**Listen live: [slotwave.martincasais.com](https://slotwave.martincasais.com)** ·
+also a [Farcaster mini app](https://farcaster.xyz/miniapps/-WdRF23w7tNV/slotwave)
+
 ![Slotwave playing the mainnet tape](docs/screenshot.png)
 
-Real-time Solana sonification. Slots stream in, from a recorded capture or
-live mainnet, a pure mutation engine maps chain activity to musical
-parameters, Tone.js plays them, and a flat canvas timeline pulses in sync.
+Solana seals a block roughly every 400 milliseconds. Slotwave plays that pulse
+as music: transactions become notes, compute load becomes brightness, fees
+become bass, and anything unusual on chain cuts through in violet. You can
+pause it, scrub it like a tape, inspect any slot, and share a link that lands
+on the exact moment you heard.
+
+Under the hood: slots stream in from live mainnet (or a recorded capture), a
+pure mutation engine maps chain activity to musical parameters, Tone.js plays
+them, and a flat canvas timeline pulses in sync.
 
 **green = normal flow · violet = anomalous events** (skipped slots, compute-unit
 spikes). The semantic is identical in audio timbre and UI color.
@@ -77,8 +86,9 @@ relative change on any fixture or network condition.
 
 ```bash
 npx tsx scripts/gen-fixture.ts   # regenerate the synthetic fixture
-npx tsx scripts/capture.ts --slots 1000   # record a real mainnet fixture
-                                          # (reads SOLANA_RPC_URL / .env.local)
+npx tsx scripts/capture.ts --slots 600    # record a real mainnet fixture
+                                          # (reads SOLANA_RPC_URL from env,
+                                          # .env.local or .env)
 ```
 
 ## Deploy (Vercel)
